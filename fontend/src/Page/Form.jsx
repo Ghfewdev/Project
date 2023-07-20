@@ -135,9 +135,9 @@ const Form = () => {
       g += Number(document.getElementById(`${val[i - 1]}`).value);
     }
     if (g >= t[0].split(" ")[1]) {
-      h = 1
+      h = "ผ่าน"
     } else {
-      h = 0
+      h = "ไม่ผ่าน"
     }
     return h
   }

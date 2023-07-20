@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react'
 
-const Authen = () => {
+const Authlevel = () => {
     useEffect(() => {
         try{
-            const token = localStorage.getItem("token").split("$")[0]
-            fetch("http://localhost:3000/authen", {
+ const token = localStorage.getItem("token").split("$")[0]
+        fetch("http://localhost:3000/authen", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -23,21 +23,24 @@ const Authen = () => {
                     localStorage.removeItem("token");
                     window.location = "/login";
                 } else {
-                    
+                    if(localStorage.getItem("token").split("$")[1] === "09")
+                    console.log("ok")
+                    else
+                    alert("คุณไม่มีสิทธ์เข้าถึงหน้านี้")
+                    window.location = "/";
                 }
 
             })
             .catch((error) => {
                 console.log("Error: ", error)
             })
-        } catch {
+        }catch{
             alert("You have to login before")
             window.location = "/login"
         }
-        
-        
+       
     }, []);
 
 }
 
-export default Authen
+export default Authlevel

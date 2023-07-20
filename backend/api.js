@@ -42,7 +42,7 @@ app.post('/login', jsonParser, (req, res, next) => {
         if (users.length === 0) { res.json({ status: 'error', massage: 'no user not found' }); return }
         bcrypt.compare(req.body.password, users[0].us_password, (err, islogin) => {
             if (islogin) {
-                var token = jwt.sign({ name: users[0].us_name }, secect, { expiresIn: '1h' });
+                var token = jwt.sign({ name: users[0].us_name }, secect, { expiresIn: '1h' })+ "$" + users[0].us_level;
                 res.json({ status: 'ok', massage: 'login success', token, name: users[0].us_name, id: users[0].us_id, agency: users[0].us_agency });
             } else {
                 res.json({ status: 'erorr', massage: 'login failed' })

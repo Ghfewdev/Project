@@ -23,8 +23,6 @@ const CalForm = () => {
   var v = "นิยามตัวชี้วัด"
   var z = "ชื่อตัวชี้วัด";
   var q = "ค่าเป้าหมาย";
-  var p = "ค่าเฉลี่ย";
-  var r = "รวม";
 
   try {
     if (select !== null) {
@@ -51,19 +49,6 @@ const CalForm = () => {
       console.log("err")
   } catch {
     console.log("err2")
-  }
-
-  const handlesum = (val) => {
-    var a = select.map(aa => aa.de_paras.split(", "))
-    var a1 = select.map(aa1 => aa1.fm_name)[val]
-    var b = a[val]
-    var c = []
-    for (var i = 0; i < b.length; i++) {
-      c.push(parseFloat(b[i]))
-    }
-    var d = c.reduce((a, b) => a + b, 0)
-    var e = d / b.length
-    document.getElementById("namesum").value = a1
   }
 
   function show(props) {
@@ -111,7 +96,7 @@ const CalForm = () => {
                   x = (x/props[0].fm_paras.split(', ').length).toFixed(2)
                   else if (w === "ผลรวม")
                   x = x
-                  if(item.de_result === 1)
+                  if(item.de_result === "ผ่าน")
                   u = <h4 className="bi bi-check-circle"></h4>
                   return (
                     <tr key={index}>

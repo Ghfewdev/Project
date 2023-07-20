@@ -4,11 +4,13 @@ import Footer from '../Component/Footer';
 
 const AddForm = () => {
 
+Authen();
+
     const [numpara, setNumpara] = useState(0);
     const [parass, setParass] = useState("");
     const [solv, setSolv] = useState("");
 
-    Authen();
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();

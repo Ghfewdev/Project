@@ -1,10 +1,11 @@
 import React from 'react'
 import Footer from '../Component/Footer';
-import Authen from '../Component/Authen';
+import Authlevel from '../Component/Authlevel';
+
 
 const Register = () => {
 
-  Authen();
+  Authlevel();
 
   const handleSubmit = (event) => {
     event.preventDefault();
