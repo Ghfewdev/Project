@@ -5,13 +5,12 @@ import Footer from '../Component/Footer';
 import Authen from '../Component/Authen';
 
 const columns = [
-  { field: 'fm_id', headerName: 'รหัสตัวชี้วัด' },
+  { field: 'fm_id', headerName: 'ลำดับตัวชี้วัด' },
   { field: 'fm_name', headerName: 'ชื่อตัวชี้วัด', width: 400 },
   { field: 'us_agency', headerName: 'ส่วนราชการ' },
   { field: 'de_qur', headerName: 'ไตรมาส' },
-  { field: 'fd_date', headerName: 'วัน' },
-  { field: 'fd_time', headerName: 'เวลา' },
-  { field: 'de_ans', headerName: 'ประเมิน' },
+  { field: 'fm_solve', headerName: 'ค่าเป้าหมาย' },
+  { field: 'de_ans', headerName: 'ผลการดำเนินงาน' },
   { field: 'de_result', headerName: 'สรุป' }
 ]
 

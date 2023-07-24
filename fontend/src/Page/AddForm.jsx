@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Authen from '../Component/Authen';
 import Footer from '../Component/Footer';
+import Authlevel from '../Component/Authlevel';
 
 const AddForm = () => {
 
-Authen();
+Authlevel();
 
     const [numpara, setNumpara] = useState(0);
     const [parass, setParass] = useState("");

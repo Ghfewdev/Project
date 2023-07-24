@@ -165,25 +165,6 @@ app.get("/formed/:id", jsonParser, (req, res, next) => {
     })
 })
 
-//result
-app.post("/result/add", jsonParser, (req, res, next) => {
-    var Isql = "INSERT INTO result (fm_id, re_sum, re_num, re_result) VALUES (?, ?, ?, ?)"
-    var IV = [req.body.fm, req.body.sum, req.body.num, req.body.result]
-    conn.execute(Isql, IV, (err, results, fields) => {
-        if (err) {
-            res.json({ status: 'error', massage: err })
-            return
-        } else
-            res.json({ status: 'ok' })
-    })
-})
-
-app.get("/result", jsonParser, (req, res, next) => {
-    conn.query("SELECT * FROM result", (err, result, fields) => {
-        res.send(result)
-    })
-})
-
 //all
 app.get("/all", jsonParser, (req, res, next) => {
     conn.query("SELECT * FROM detail RIGHT JOIN formed ON detail.de_id = formed.de_id RIGHT JOIN users ON formed.us_id = users.us_id RIGHT JOIN form on form.fm_id = detail.fm_id;",

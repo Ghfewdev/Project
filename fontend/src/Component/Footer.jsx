@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <div className="footer">
-        Copyright © 2023 , all rights reserved
+        Copyright © 2023 สพบ , all rights reserved
 </div>
     </>
   )
